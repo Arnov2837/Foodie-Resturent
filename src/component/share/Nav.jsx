@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 const Nav = () => {
   return (
@@ -8,9 +7,13 @@ const Nav = () => {
       <div className="bg-orange-500 text-white text-center py-2 px-4 text-sm font-medium">
         🔥 Today Special — Get{" "}
         <span className="font-bold">20% OFF</span> on your first order!
-        <span className="ml-2 underline cursor-pointer">
+
+        <Link
+          href="/offers"
+          className="ml-2 underline cursor-pointer hover:text-orange-100"
+        >
           Order Now →
-        </span>
+        </Link>
       </div>
 
       {/* Navbar */}
@@ -21,6 +24,7 @@ const Nav = () => {
 
           {/* Mobile Menu */}
           <div className="dropdown">
+
             <div
               tabIndex={0}
               role="button"
@@ -42,31 +46,62 @@ const Nav = () => {
               </svg>
             </div>
 
+            {/* Mobile Links */}
             <ul
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-white rounded-2xl z-50 mt-3 w-52 p-3 shadow-xl"
             >
+
+              {/* Home */}
               <li>
-                <a className="hover:text-orange-500">Home</a>
+                <Link
+                  href="/"
+                  className="hover:text-orange-500"
+                >
+                  Home
+                </Link>
               </li>
 
+              {/* Menu */}
               <li>
-                <a className="hover:text-orange-500">Menu</a>
+                <Link
+                  href="/menu"
+                  className="hover:text-orange-500"
+                >
+                  Menu
+                </Link>
               </li>
 
+              {/* Offers */}
               <li>
-                <a className="hover:text-orange-500">
+                <Link
+                  href="/offers"
+                  className="hover:text-orange-500"
+                >
                   Offers 🔥
-                </a>
+                </Link>
               </li>
 
+              {/* About */}
               <li>
-                <a className="hover:text-orange-500">About</a>
+                <Link
+                  href="/about"
+                  className="hover:text-orange-500"
+                >
+                  About
+                </Link>
               </li>
 
+              {/* Contact */}
               <li>
-                <a className="hover:text-orange-500">Contact</a>
+                <Link
+                  href="/contact"
+                  className="hover:text-orange-500"
+                >
+                  Contact
+                </Link>
               </li>
+
             </ul>
           </div>
 
@@ -89,53 +124,81 @@ const Nav = () => {
               </p>
             </div>
           </Link>
+
         </div>
 
-        {/* Center Menu */}
+        {/* Center Menu - Desktop */}
         <div className="navbar-center hidden lg:flex">
+
           <ul className="menu menu-horizontal px-1 gap-2">
 
+            {/* Home */}
             <li>
-              <a className="font-medium hover:text-orange-500 transition">
+              <Link
+                href="/"
+                className="font-medium hover:text-orange-500 transition"
+              >
                 Home
-              </a>
+              </Link>
             </li>
 
+            {/* Menu */}
             <li>
-              <a className="font-medium hover:text-orange-500 transition">
+              <Link
+                href="/menu"
+                className="font-medium hover:text-orange-500 transition"
+              >
                 Menu
-              </a>
+              </Link>
             </li>
 
+            {/* Offers */}
             <li>
-              <a className="font-medium hover:text-orange-500 transition">
+              <Link
+                href="/offers"
+                className="font-medium hover:text-orange-500 transition"
+              >
                 Offers 🔥
-              </a>
+              </Link>
             </li>
 
+            {/* More */}
             <li>
               <details>
+
                 <summary className="font-medium hover:text-orange-500">
                   More
                 </summary>
 
                 <ul className="p-2 bg-white rounded-xl w-40 z-50 shadow-xl">
+
+                  {/* About */}
                   <li>
-                    <a className="hover:text-orange-500">
+                    <Link
+                      href="/about"
+                      className="hover:text-orange-500"
+                    >
                       About Us
-                    </a>
+                    </Link>
                   </li>
 
+                  {/* Contact */}
                   <li>
-                    <a className="hover:text-orange-500">
+                    <Link
+                      href="/contact"
+                      className="hover:text-orange-500"
+                    >
                       Contact
-                    </a>
+                    </Link>
                   </li>
+
                 </ul>
+
               </details>
             </li>
 
           </ul>
+
         </div>
 
         {/* Right Side */}
